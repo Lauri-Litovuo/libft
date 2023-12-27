@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llitovuo <llitovuo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:13:01 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/11/15 15:48:50 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 15:57:01 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*node;
 
-	new = (t_list *) malloc(sizeof(new));
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	node = (t_list *) malloc(sizeof(node));
+	if (!node)
+		return (0);
+	node->next = 0;
+	node->content = content;
+	return (node);
 }

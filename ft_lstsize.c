@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llitovuo <llitovuo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:46:11 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/11/15 15:56:26 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 15:57:01 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	count;
 
-	i = 0;
+	count = 0;
 	while (lst != NULL)
 	{
 		lst = lst->next;
-		i++;
+		count++;
 	}
-	return (i);
+	return (count);
 }

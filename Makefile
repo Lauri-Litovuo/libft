@@ -44,6 +44,11 @@ SOURCES = ft_isascii.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
+			./ft_printf/ft_printf.c \
+			./ft_printf/ft_putchar.c \
+			./ft_printf/ft_putstr.c	\
+			./ft_printf/ft_putnbr_base.c \
+			./ft_printf/ft_putptr.c \
 
 
 
@@ -58,15 +63,18 @@ CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJECTS)
 	@ar -rsc $(NAME) $(OBJECTS)
-	@echo "libft making in progress..."
+	@echo "Libft making in progress..."
+
+%.o: %.c
+	@cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
 clean:
 	@rm -f $(OBJECTS)
-	@echo "removing .o files"
+	@echo "Removing .o files"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "removing libft.a"
+	@echo "Removing libft.a"
 
 re: fclean all
 

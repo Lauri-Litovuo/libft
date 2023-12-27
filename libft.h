@@ -6,13 +6,15 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:02:06 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 15:57:01 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:11:45 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
 
 int		ft_isalpha(int a);
 int		ft_isdigit(int c);
@@ -63,5 +65,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void    ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+int     ft_putchar(char c, int wlen);
+int	    ft_putstr(char *str, int wlen);
+int	    ft_putnbr_base(long int nbr, int *wlen, int base, char *base_symbols);
+int	    ft_putptr(unsigned long long nbr, int *wlen, int base, char *base_symbols);
+int	    ft_printf(const char *str, ...);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:59:22 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:29:22 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:50:41 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_putptr(unsigned long long nbr, int *wlen, int base, char *base_symbols)
+int	ft_putptr(unsigned long long nbr, int *wlen, int base, char *b_symb)
 {
 	if (*wlen == 0)
 	{
@@ -27,8 +27,8 @@ int	ft_putptr(unsigned long long nbr, int *wlen, int base, char *base_symbols)
 		return (1);
 	}
 	if (nbr >= (unsigned long long) base)
-		*wlen += ft_putptr(nbr / base, wlen, base, base_symbols);
-	if (ft_putchar(base_symbols[nbr % base], 0) < 0)
+		*wlen += ft_putptr(nbr / base, wlen, base, b_symb);
+	if (ft_putchar(b_symb[nbr % base], 0) < 0)
 		return (-1);
 	return (1);
 }

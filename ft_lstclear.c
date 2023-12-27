@@ -6,7 +6,7 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 13:53:45 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 15:57:01 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:41:47 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	if (!lst)
 		return ;
 	lst_ptr = *lst;
-	while(lst_ptr != 0)
+	while (lst_ptr != 0)
 	{
 		next = lst_ptr->next;
 		ft_lstdelone(lst_ptr, del);

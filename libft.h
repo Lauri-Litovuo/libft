@@ -6,7 +6,7 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:02:06 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:11:45 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:49:25 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 int		ft_isalpha(int a);
 int		ft_isdigit(int c);
@@ -51,25 +57,19 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 
-typedef struct	s_list
-{
-    void	*content;
-    struct	s_list *next;
-}				t_list;
-
-t_list  *ft_lstnew(void *content);
-void    ft_lstadd_front(t_list **lst, t_list *new);
-int	    ft_lstsize(t_list *lst);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
-void    ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
-int     ft_putchar(char c, int wlen);
-int	    ft_putstr(char *str, int wlen);
-int	    ft_putnbr_base(long int nbr, int *wlen, int base, char *base_symbols);
-int	    ft_putptr(unsigned long long nbr, int *wlen, int base, char *base_symbols);
-int	    ft_printf(const char *str, ...);
+int		ft_putchar(char c, int wlen);
+int		ft_putstr(char *str, int wlen);
+int		ft_putnbr_base(long int nbr, int *wlen, int base, char *base_symbols);
+int		ft_putptr(unsigned long long nbr, int *wlen, int base, char *b_symb);
+int		ft_printf(const char *str, ...);
 
 #endif

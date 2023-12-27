@@ -49,9 +49,8 @@ SOURCES = ft_isascii.c \
 			./ft_printf/ft_putstr.c	\
 			./ft_printf/ft_putnbr_base.c \
 			./ft_printf/ft_putptr.c \
-
-
-
+			./get_next_line/get_next_line.c \
+			./get_next_line/get_next_line_utils.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 

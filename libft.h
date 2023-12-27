@@ -6,7 +6,7 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:02:06 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:49:25 by llitovuo         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:58:13 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -71,5 +74,16 @@ int		ft_putstr(char *str, int wlen);
 int		ft_putnbr_base(long int nbr, int *wlen, int base, char *base_symbols);
 int		ft_putptr(unsigned long long nbr, int *wlen, int base, char *b_symb);
 int		ft_printf(const char *str, ...);
+
+char	*get_next_line(int fd);
+char	*read_file(int fd, char *mix_bin);
+char	*save_residual(char	*mix_bin, char *residual);
+char	*extract_line(char *mix_bin, char *line);
+
+size_t	ft_strlen_gnl(char *a);
+char	*ft_strchr_gnl(char *s, int c);
+size_t	ft_strlcpy_gnl(char *dst, char *src, size_t dstsize);
+size_t	ft_strlcat_gnl(char *dst, char *src, size_t dstsize);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 
 #endif

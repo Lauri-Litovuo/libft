@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:21:36 by llitovuo          #+#    #+#             */
-/*   Updated: 2024/09/05 11:49:39 by llitovuo         ###   ########.fr       */
+/*   Created: 2023/11/04 17:35:45 by llitovuo          #+#    #+#             */
+/*   Updated: 2024/09/05 12:06:33 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**
- * @brief Modified ft_putchar with int parameter to follow how many 
- * characters are written. Returns the incremented lenght.
- * 
- * @param c character to be written
- * @param wlen int lenght that is incremented
- * @return int incremented ++len; returns -1 if fails.
- */
 
-int	ft_putchar(char c, int wlen)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (write(1, &c, 1) < 0)
-		return (-1);
-	wlen++;
-	return (wlen);
+	int	i;
+
+	i = 0;
+	if (s != NULL && f != NULL)
+	{
+		while (*s != '\0')
+		{
+			f(i, s);
+			i++;
+			s++;
+		}
+	}
 }

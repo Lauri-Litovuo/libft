@@ -6,7 +6,7 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:02:06 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:58:13 by llitovuo         ###   ########.fr       */
+/*   Updated: 2024/09/05 12:04:40 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
 # endif
@@ -24,6 +25,18 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_vec
+{
+	unsigned char	*memory;
+	size_t			elem_size;
+	size_t			alloc_size;
+	size_t			len;
+}		t_vec;
+
+/*******************************/
+/*       libft functions       */
+/*******************************/
 
 int		ft_isalpha(int a);
 int		ft_isdigit(int c);
@@ -69,11 +82,19 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
+/*******************************/
+/*       printf functions      */
+/*******************************/
+
 int		ft_putchar(char c, int wlen);
 int		ft_putstr(char *str, int wlen);
 int		ft_putnbr_base(long int nbr, int *wlen, int base, char *base_symbols);
 int		ft_putptr(unsigned long long nbr, int *wlen, int base, char *b_symb);
 int		ft_printf(const char *str, ...);
+
+/*******************************/
+/*   get_next_line functions   */
+/*******************************/
 
 char	*get_next_line(int fd);
 char	*read_file(int fd, char *mix_bin);
@@ -85,5 +106,30 @@ char	*ft_strchr_gnl(char *s, int c);
 size_t	ft_strlcpy_gnl(char *dst, char *src, size_t dstsize);
 size_t	ft_strlcat_gnl(char *dst, char *src, size_t dstsize);
 char	*ft_strjoin_gnl(char *s1, char *s2);
+
+/*******************************/
+/*   	vec_lib functions 	   */
+/*******************************/
+int		vec_new(t_vec *dst, size_t init_len, size_t elem_size);
+void	vec_free(t_vec *src);
+int		vec_from(t_vec *dst, void *src, size_t len, size_t elem_size);
+int		vec_resize(t_vec *src, size_t target_len);
+int		vec_push(t_vec *src, void *elem);
+int		vec_pop(void *dst, t_vec *src);
+int		vec_copy(t_vec *dst, t_vec *src);
+void	*vec_get(t_vec *src, size_t index);
+int		vec_insert(t_vec *dst, void *elem, size_t index);
+int		vec_remove(t_vec *src, size_t index);
+int		vec_append(t_vec *dst, t_vec *src);
+int		vec_prepend(t_vec *dst, t_vec *src);
+void	vec_iter(t_vec *src, void (*f) (void *));
+void	vec_free_str(t_vec *src);
+int		vec_remove_str(t_vec *src, size_t index);
+int		vec_replace_one(t_vec *dst, void *src, size_t index); //change
+int		vec_replace_str(t_vec *dst, void *src, size_t index);
+void	vec_sort_alpha(t_vec *src);
+int		vec_copy_len(t_vec *dst, t_vec *src);
+
+
 
 #endif

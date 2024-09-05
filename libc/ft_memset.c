@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:21:36 by llitovuo          #+#    #+#             */
-/*   Updated: 2024/09/05 11:49:39 by llitovuo         ###   ########.fr       */
+/*   Created: 2023/10/24 12:23:33 by llitovuo          #+#    #+#             */
+/*   Updated: 2024/09/05 12:09:21 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**
- * @brief Modified ft_putchar with int parameter to follow how many 
- * characters are written. Returns the incremented lenght.
- * 
- * @param c character to be written
- * @param wlen int lenght that is incremented
- * @return int incremented ++len; returns -1 if fails.
- */
 
-int	ft_putchar(char c, int wlen)
+void	*ft_memset(void *ptr, int c, size_t len)
 {
-	if (write(1, &c, 1) < 0)
-		return (-1);
-	wlen++;
-	return (wlen);
+	unsigned char	*ucptr;
+
+	ucptr = ptr;
+	while (len > 0)
+	{
+		*ucptr = c;
+		ucptr++;
+		len--;
+	}
+	return (ptr);
 }

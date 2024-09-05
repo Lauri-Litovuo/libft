@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   vec_free_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:21:36 by llitovuo          #+#    #+#             */
-/*   Updated: 2024/09/05 11:49:39 by llitovuo         ###   ########.fr       */
+/*   Created: 2024/04/25 16:03:24 by llitovuo          #+#    #+#             */
+/*   Updated: 2024/09/05 11:45:56 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**
- * @brief Modified ft_putchar with int parameter to follow how many 
- * characters are written. Returns the incremented lenght.
- * 
- * @param c character to be written
- * @param wlen int lenght that is incremented
- * @return int incremented ++len; returns -1 if fails.
- */
 
-int	ft_putchar(char c, int wlen)
+/************************************************
+ *  Frees strings and zeroes vector fields.    	*
+ ************************************************/
+
+void	vec_free_str(t_vec *src)
 {
-	if (write(1, &c, 1) < 0)
-		return (-1);
-	wlen++;
-	return (wlen);
+	char	*str_ptr;
+	size_t	i;
+
+	i = 0;
+	while (i < src->len)
+	{
+		str_ptr = *(char **)vec_get(src, i);
+		free(str_ptr);
+		i++;
+	}
+	vec_free(src);
 }

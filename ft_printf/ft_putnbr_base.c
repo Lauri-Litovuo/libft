@@ -6,11 +6,11 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:54:34 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:29:19 by llitovuo         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:49:42 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 /**
  * @brief 
  * 

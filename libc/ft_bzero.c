@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:21:36 by llitovuo          #+#    #+#             */
-/*   Updated: 2024/09/05 11:49:39 by llitovuo         ###   ########.fr       */
+/*   Created: 2023/10/24 16:12:10 by llitovuo          #+#    #+#             */
+/*   Updated: 2024/09/05 12:04:54 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**
- * @brief Modified ft_putchar with int parameter to follow how many 
- * characters are written. Returns the incremented lenght.
- * 
- * @param c character to be written
- * @param wlen int lenght that is incremented
- * @return int incremented ++len; returns -1 if fails.
- */
 
-int	ft_putchar(char c, int wlen)
+void	ft_bzero(void *s, size_t n)
 {
-	if (write(1, &c, 1) < 0)
-		return (-1);
-	wlen++;
-	return (wlen);
+	char	zero;
+	char	*zerop;
+
+	zero = 0;
+	zerop = s;
+	while (n > 0)
+	{
+		*zerop = zero;
+		zerop++;
+		n--;
+	}
 }

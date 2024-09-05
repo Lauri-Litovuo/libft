@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   vec_replace_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:21:36 by llitovuo          #+#    #+#             */
-/*   Updated: 2024/09/05 11:49:39 by llitovuo         ###   ########.fr       */
+/*   Created: 2024/04/25 13:30:47 by llitovuo          #+#    #+#             */
+/*   Updated: 2024/09/05 11:46:34 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**
- * @brief Modified ft_putchar with int parameter to follow how many 
- * characters are written. Returns the incremented lenght.
- * 
- * @param c character to be written
- * @param wlen int lenght that is incremented
- * @return int incremented ++len; returns -1 if fails.
- */
+#include <stdio.h>
 
-int	ft_putchar(char c, int wlen)
+int	vec_replace_str(t_vec *dst, void *src, size_t index)
 {
-	if (write(1, &c, 1) < 0)
+	if (!dst || !src || index > dst->len)
 		return (-1);
-	wlen++;
-	return (wlen);
+	if (vec_remove(dst, (size_t)index) < 0)
+		return (-1);
+	if (vec_insert(dst, &src, index) < 0)
+		return (-1);
+	return (1);
 }

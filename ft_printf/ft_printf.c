@@ -6,11 +6,11 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:54:24 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:28:56 by llitovuo         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:49:36 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 /**
  * @brief The fuction is designed to test the success of write function

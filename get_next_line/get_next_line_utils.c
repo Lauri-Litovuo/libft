@@ -6,11 +6,11 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:14:30 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:59:10 by llitovuo         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:49:54 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	ft_strlen_gnl(char *a)
 {

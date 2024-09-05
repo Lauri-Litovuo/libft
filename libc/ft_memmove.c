@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:21:36 by llitovuo          #+#    #+#             */
-/*   Updated: 2024/09/05 11:49:39 by llitovuo         ###   ########.fr       */
+/*   Created: 2023/10/26 10:23:04 by llitovuo          #+#    #+#             */
+/*   Updated: 2024/09/05 12:06:00 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/**
- * @brief Modified ft_putchar with int parameter to follow how many 
- * characters are written. Returns the incremented lenght.
- * 
- * @param c character to be written
- * @param wlen int lenght that is incremented
- * @return int incremented ++len; returns -1 if fails.
- */
 
-int	ft_putchar(char c, int wlen)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (write(1, &c, 1) < 0)
-		return (-1);
-	wlen++;
-	return (wlen);
+	char			*dstp;
+	char			*srcp;
+
+	dstp = (char *)dst;
+	srcp = (char *)src;
+	if (!srcp && !dstp)
+		return (dst);
+	if (srcp < dstp)
+	{
+		while (len--)
+			dstp[len] = srcp[len];
+		return (dst);
+	}
+	else
+		ft_memcpy(dst, src, len);
+	return (dst);
 }

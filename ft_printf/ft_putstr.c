@@ -6,11 +6,11 @@
 /*   By: llitovuo <llitovuo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 08:34:31 by llitovuo          #+#    #+#             */
-/*   Updated: 2023/12/27 16:29:25 by llitovuo         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:49:47 by llitovuo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 /**
  * @brief Modified ft_putstr, that takes also int len as a parameter to follow 
  * how many characters were written.

@@ -111,11 +111,11 @@ My project is organized as follows:
 
 ```
 libft/
-├── src/                 # Source code for Libft functions
-├── includes/            # Header files
+├── libc/                # Source code for Libft functions
 ├── ft_printf/           # ft_printf implementation
 ├── get_next_line/       # get_next_line implementation
-├── vector/              # Custom vector data structure implementation
+├── vec_lib/             # Custom vector data structure implementation
+├── libft.h              # Header file
 ├── Makefile             # Build script
 └── README.md            # Project documentation
 ```
